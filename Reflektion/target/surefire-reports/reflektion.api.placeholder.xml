@@ -1,0 +1,270 @@
+<testsuite failures="0" name="reflektion/api/placeholder.feature" skipped="0" tests="6" time="6.770956">
+  <testcase classname="reflektion.api.placeholder" name="To verify the GET service API is returning 200 response" time="2.011704">
+    <system-out>* url apiBaseURL .......................................................... passed
+* header Content-Type = contenttype ....................................... passed
+* def myVar = '{ "title": "foo", "body": "bar", "userId": 1}' ............. passed
+* json requestbody = read('classpath:reflektion/api/request.json') ........ passed
+Given path apiPathURL ..................................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* match each response[*].id == '#number' .................................. passed
+* match each response[*].title == '#string' ............................... passed
+* match each response[*].title == '#string' ............................... passed
+* match each response[*].body == '#string' ................................ passed
+* match each response[*].userId == '#number' .............................. passed
+* def len = response.length ............................................... passed
+* match len == 100 ........................................................ passed</system-out>
+  </testcase>
+  <testcase classname="reflektion.api.placeholder" name="To verify the GET service API is returning 200 response for a single record" time="1.000034">
+    <system-out>* url apiBaseURL .......................................................... passed
+* header Content-Type = contenttype ....................................... passed
+* def myVar = '{ "title": "foo", "body": "bar", "userId": 1}' ............. passed
+* json requestbody = read('classpath:reflektion/api/request.json') ........ passed
+Given path apiPathURL ..................................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* match each response[*].id == '#number' .................................. passed
+* match each response[*].title == '#string' ............................... passed
+* match each response[*].title == '#string' ............................... passed
+* match each response[*].body == '#string' ................................ passed
+* match each response[*].userId == '#number' .............................. passed
+* def len = response.length ............................................... passed
+* match len == 100 ........................................................ passed
+* url apiBaseURL .......................................................... passed
+* header Content-Type = contenttype ....................................... passed
+* def myVar = '{ "title": "foo", "body": "bar", "userId": 1}' ............. passed
+* json requestbody = read('classpath:reflektion/api/request.json') ........ passed
+Given path apiPathURL + '/1' .............................................. passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+Then print response ....................................................... passed
+* match each response[*].id == '#number' .................................. passed
+* match each response[*].title == '#string' ............................... passed
+* match each response[*].title == '#string' ............................... passed
+* match each response[*].body == '#string' ................................ passed
+* match each response[*].userId == '#number' .............................. passed
+* def id = response.id .................................................... passed
+* match id == 1 ........................................................... passed</system-out>
+  </testcase>
+  <testcase classname="reflektion.api.placeholder" name="To verify the GET service API is returning 404 for invalid request URL" time="0.708708">
+    <system-out>* url apiBaseURL .......................................................... passed
+* header Content-Type = contenttype ....................................... passed
+* def myVar = '{ "title": "foo", "body": "bar", "userId": 1}' ............. passed
+* json requestbody = read('classpath:reflektion/api/request.json') ........ passed
+Given path apiPathURL ..................................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* match each response[*].id == '#number' .................................. passed
+* match each response[*].title == '#string' ............................... passed
+* match each response[*].title == '#string' ............................... passed
+* match each response[*].body == '#string' ................................ passed
+* match each response[*].userId == '#number' .............................. passed
+* def len = response.length ............................................... passed
+* match len == 100 ........................................................ passed
+* url apiBaseURL .......................................................... passed
+* header Content-Type = contenttype ....................................... passed
+* def myVar = '{ "title": "foo", "body": "bar", "userId": 1}' ............. passed
+* json requestbody = read('classpath:reflektion/api/request.json') ........ passed
+Given path apiPathURL + '/1' .............................................. passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+Then print response ....................................................... passed
+* match each response[*].id == '#number' .................................. passed
+* match each response[*].title == '#string' ............................... passed
+* match each response[*].title == '#string' ............................... passed
+* match each response[*].body == '#string' ................................ passed
+* match each response[*].userId == '#number' .............................. passed
+* def id = response.id .................................................... passed
+* match id == 1 ........................................................... passed
+* url apiBaseURL .......................................................... passed
+* header Content-Type = contenttype ....................................... passed
+* def myVar = '{ "title": "foo", "body": "bar", "userId": 1}' ............. passed
+* json requestbody = read('classpath:reflektion/api/request.json') ........ passed
+Given path invalidapiPathUrl .............................................. passed
+When method GET ........................................................... passed
+Then status 404 ........................................................... passed
+* print apiBaseURL + invalidapiPathUrl .................................... passed
+* print response .......................................................... passed</system-out>
+  </testcase>
+  <testcase classname="reflektion.api.placeholder" name="To verify the POST service API is returning 201 for a String request" time="1.317316">
+    <system-out>* url apiBaseURL .......................................................... passed
+* header Content-Type = contenttype ....................................... passed
+* def myVar = '{ "title": "foo", "body": "bar", "userId": 1}' ............. passed
+* json requestbody = read('classpath:reflektion/api/request.json') ........ passed
+Given path apiPathURL ..................................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* match each response[*].id == '#number' .................................. passed
+* match each response[*].title == '#string' ............................... passed
+* match each response[*].title == '#string' ............................... passed
+* match each response[*].body == '#string' ................................ passed
+* match each response[*].userId == '#number' .............................. passed
+* def len = response.length ............................................... passed
+* match len == 100 ........................................................ passed
+* url apiBaseURL .......................................................... passed
+* header Content-Type = contenttype ....................................... passed
+* def myVar = '{ "title": "foo", "body": "bar", "userId": 1}' ............. passed
+* json requestbody = read('classpath:reflektion/api/request.json') ........ passed
+Given path apiPathURL + '/1' .............................................. passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+Then print response ....................................................... passed
+* match each response[*].id == '#number' .................................. passed
+* match each response[*].title == '#string' ............................... passed
+* match each response[*].title == '#string' ............................... passed
+* match each response[*].body == '#string' ................................ passed
+* match each response[*].userId == '#number' .............................. passed
+* def id = response.id .................................................... passed
+* match id == 1 ........................................................... passed
+* url apiBaseURL .......................................................... passed
+* header Content-Type = contenttype ....................................... passed
+* def myVar = '{ "title": "foo", "body": "bar", "userId": 1}' ............. passed
+* json requestbody = read('classpath:reflektion/api/request.json') ........ passed
+Given path invalidapiPathUrl .............................................. passed
+When method GET ........................................................... passed
+Then status 404 ........................................................... passed
+* print apiBaseURL + invalidapiPathUrl .................................... passed
+* print response .......................................................... passed
+* url apiBaseURL .......................................................... passed
+* header Content-Type = contenttype ....................................... passed
+* def myVar = '{ "title": "foo", "body": "bar", "userId": 1}' ............. passed
+* json requestbody = read('classpath:reflektion/api/request.json') ........ passed
+Given path apiPathURL ..................................................... passed
+And request myVar ......................................................... passed
+When method POST .......................................................... passed
+Then status 201 ........................................................... passed
+* print 'Record created is: ' + response.id ............................... passed</system-out>
+  </testcase>
+  <testcase classname="reflektion.api.placeholder" name="To verify the POST service API is returning 200 for a String request" time="0.907696">
+    <system-out>* url apiBaseURL .......................................................... passed
+* header Content-Type = contenttype ....................................... passed
+* def myVar = '{ "title": "foo", "body": "bar", "userId": 1}' ............. passed
+* json requestbody = read('classpath:reflektion/api/request.json') ........ passed
+Given path apiPathURL ..................................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* match each response[*].id == '#number' .................................. passed
+* match each response[*].title == '#string' ............................... passed
+* match each response[*].title == '#string' ............................... passed
+* match each response[*].body == '#string' ................................ passed
+* match each response[*].userId == '#number' .............................. passed
+* def len = response.length ............................................... passed
+* match len == 100 ........................................................ passed
+* url apiBaseURL .......................................................... passed
+* header Content-Type = contenttype ....................................... passed
+* def myVar = '{ "title": "foo", "body": "bar", "userId": 1}' ............. passed
+* json requestbody = read('classpath:reflektion/api/request.json') ........ passed
+Given path apiPathURL + '/1' .............................................. passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+Then print response ....................................................... passed
+* match each response[*].id == '#number' .................................. passed
+* match each response[*].title == '#string' ............................... passed
+* match each response[*].title == '#string' ............................... passed
+* match each response[*].body == '#string' ................................ passed
+* match each response[*].userId == '#number' .............................. passed
+* def id = response.id .................................................... passed
+* match id == 1 ........................................................... passed
+* url apiBaseURL .......................................................... passed
+* header Content-Type = contenttype ....................................... passed
+* def myVar = '{ "title": "foo", "body": "bar", "userId": 1}' ............. passed
+* json requestbody = read('classpath:reflektion/api/request.json') ........ passed
+Given path invalidapiPathUrl .............................................. passed
+When method GET ........................................................... passed
+Then status 404 ........................................................... passed
+* print apiBaseURL + invalidapiPathUrl .................................... passed
+* print response .......................................................... passed
+* url apiBaseURL .......................................................... passed
+* header Content-Type = contenttype ....................................... passed
+* def myVar = '{ "title": "foo", "body": "bar", "userId": 1}' ............. passed
+* json requestbody = read('classpath:reflektion/api/request.json') ........ passed
+Given path apiPathURL ..................................................... passed
+And request myVar ......................................................... passed
+When method POST .......................................................... passed
+Then status 201 ........................................................... passed
+* print 'Record created is: ' + response.id ............................... passed
+* url apiBaseURL .......................................................... passed
+* header Content-Type = contenttype ....................................... passed
+* def myVar = '{ "title": "foo", "body": "bar", "userId": 1}' ............. passed
+* json requestbody = read('classpath:reflektion/api/request.json') ........ passed
+Given path apiPathURL + '/1' .............................................. passed
+And request requestbody ................................................... passed
+When method PUT ........................................................... passed
+Then status 200 ........................................................... passed
+* print response .......................................................... passed
+* match response.id == 1 .................................................. passed
+* match response.title == 'abc' ........................................... passed
+* match response.body == 'xyz' ............................................ passed
+* match response.userId == 1 .............................................. passed</system-out>
+  </testcase>
+  <testcase classname="reflektion.api.placeholder" name="To verify the DELETE service API is returning 200" time="0.825498">
+    <system-out>* url apiBaseURL .......................................................... passed
+* header Content-Type = contenttype ....................................... passed
+* def myVar = '{ "title": "foo", "body": "bar", "userId": 1}' ............. passed
+* json requestbody = read('classpath:reflektion/api/request.json') ........ passed
+Given path apiPathURL ..................................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* match each response[*].id == '#number' .................................. passed
+* match each response[*].title == '#string' ............................... passed
+* match each response[*].title == '#string' ............................... passed
+* match each response[*].body == '#string' ................................ passed
+* match each response[*].userId == '#number' .............................. passed
+* def len = response.length ............................................... passed
+* match len == 100 ........................................................ passed
+* url apiBaseURL .......................................................... passed
+* header Content-Type = contenttype ....................................... passed
+* def myVar = '{ "title": "foo", "body": "bar", "userId": 1}' ............. passed
+* json requestbody = read('classpath:reflektion/api/request.json') ........ passed
+Given path apiPathURL + '/1' .............................................. passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+Then print response ....................................................... passed
+* match each response[*].id == '#number' .................................. passed
+* match each response[*].title == '#string' ............................... passed
+* match each response[*].title == '#string' ............................... passed
+* match each response[*].body == '#string' ................................ passed
+* match each response[*].userId == '#number' .............................. passed
+* def id = response.id .................................................... passed
+* match id == 1 ........................................................... passed
+* url apiBaseURL .......................................................... passed
+* header Content-Type = contenttype ....................................... passed
+* def myVar = '{ "title": "foo", "body": "bar", "userId": 1}' ............. passed
+* json requestbody = read('classpath:reflektion/api/request.json') ........ passed
+Given path invalidapiPathUrl .............................................. passed
+When method GET ........................................................... passed
+Then status 404 ........................................................... passed
+* print apiBaseURL + invalidapiPathUrl .................................... passed
+* print response .......................................................... passed
+* url apiBaseURL .......................................................... passed
+* header Content-Type = contenttype ....................................... passed
+* def myVar = '{ "title": "foo", "body": "bar", "userId": 1}' ............. passed
+* json requestbody = read('classpath:reflektion/api/request.json') ........ passed
+Given path apiPathURL ..................................................... passed
+And request myVar ......................................................... passed
+When method POST .......................................................... passed
+Then status 201 ........................................................... passed
+* print 'Record created is: ' + response.id ............................... passed
+* url apiBaseURL .......................................................... passed
+* header Content-Type = contenttype ....................................... passed
+* def myVar = '{ "title": "foo", "body": "bar", "userId": 1}' ............. passed
+* json requestbody = read('classpath:reflektion/api/request.json') ........ passed
+Given path apiPathURL + '/1' .............................................. passed
+And request requestbody ................................................... passed
+When method PUT ........................................................... passed
+Then status 200 ........................................................... passed
+* print response .......................................................... passed
+* match response.id == 1 .................................................. passed
+* match response.title == 'abc' ........................................... passed
+* match response.body == 'xyz' ............................................ passed
+* match response.userId == 1 .............................................. passed
+* url apiBaseURL .......................................................... passed
+* header Content-Type = contenttype ....................................... passed
+* def myVar = '{ "title": "foo", "body": "bar", "userId": 1}' ............. passed
+* json requestbody = read('classpath:reflektion/api/request.json') ........ passed
+Given path apiPathURL + '/1' .............................................. passed
+When method DELETE ........................................................ passed
+Then status 200 ........................................................... passed
+* match response == {} .................................................... passed</system-out>
+  </testcase>
+</testsuite>

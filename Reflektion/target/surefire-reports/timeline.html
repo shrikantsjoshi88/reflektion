@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="visualization"></div>
+    <script>
+var groups = new vis.DataSet([{"id":1,"content":"ForkJoinPool-1-worker-1"}]);
+var items = new vis.DataSet([{"id":1,"group":1,"content":"placeholder[1:10]","start":2201,"end":4229,"title":"placeholder[1:10] 05:30:02.201-05:30:04.229 To verify the GET service API is returning 200 response"},{"id":2,"group":1,"content":"placeholder[2:29]","start":4235,"end":5237,"title":"placeholder[2:29] 05:30:04.235-05:30:05.237 To verify the GET service API is returning 200 response for a single record"},{"id":3,"group":1,"content":"placeholder[3:48]","start":5243,"end":5952,"title":"placeholder[3:48] 05:30:05.243-05:30:05.952 To verify the GET service API is returning 404 for invalid request URL"},{"id":4,"group":1,"content":"placeholder[4:59]","start":5960,"end":7278,"title":"placeholder[4:59] 05:30:05.960-05:30:07.278 To verify the POST service API is returning 201 for a String request"},{"id":5,"group":1,"content":"placeholder[5:71]","start":7293,"end":8202,"title":"placeholder[5:71] 05:30:07.293-05:30:08.202 To verify the POST service API is returning 200 for a String request"},{"id":6,"group":1,"content":"placeholder[6:85]","start":8211,"end":9037,"title":"placeholder[6:85] 05:30:08.211-05:30:09.037 To verify the DELETE service API is returning 200"}]);
+var container = document.getElementById('visualization');
+var timeline = new vis.Timeline(container);
+timeline.setOptions({ groupOrder: 'content' });
+timeline.setGroups(groups);
+timeline.setItems(items);
+</script>
+  </body>
+</html>
